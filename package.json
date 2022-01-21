@@ -1,0 +1,72 @@
+{
+  "name": "xchenj-api",
+  "version": "1.0.0",
+  "description": "REST API",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test npm run NODE_ENV=test mocha --require @babel/polyfill --require @babel/register --timeout 1000 ./src/test/ --exit || exit 0",
+    "dev": "NODE_ENV=dev nodemon -r esm src/index.js | pino-pretty",
+    "staging": "NODE_ENV=production node build/index.js | pino-pretty",
+    "build": "babel src --out-dir build",
+    "production": "NODE_ENV=production node build/index.js | pino-pretty",
+    "lint": "npx eslint src",
+    "lint:fix": "npx eslint src --fix",
+    "prettier": "npx prettier src --check --exit || exit 0",
+    "prettier:fix": "npx prettier src --write --exit|| exit 0",
+    "format": "npm run prettier:fix && npm run lint:fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulSebalu/xchenj-api"
+  },
+  "keywords": [
+    "API"
+  ],
+  "author": "PaulSebalu",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/PaulSebalu/xchenj-api/issues"
+  },
+  "homepage": "https://github.com/PaulSebalu/xchenj-api#readme",
+  "engines": {
+    "node": ">=10 <13"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/node": "^7.14.9",
+    "@babel/plugin-transform-runtime": "^7.14.3",
+    "@babel/preset-env": "^7.14.2",
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "eslint": "^7.28.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "esm": "^3.2.25",
+    "mocha": "^9.0.3",
+    "nodemon": "^2.0.12",
+    "pino-pretty": "^7.2.0",
+    "prettier": "^2.3.1"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@babel/register": "^7.14.5",
+    "@babel/runtime": "^7.14.0",
+    "axios": "^0.25.0",
+    "cors": "^2.8.5",
+    "csurf": "^1.11.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-pino-logger": "^6.0.0",
+    "express-rate-limit": "^5.5.1",
+    "hpp": "^0.2.3",
+    "joi": "^17.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "luxon": "^2.0.2",
+    "pino": "^6.13.0",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  }
+}
