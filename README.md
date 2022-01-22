@@ -1,1 +1,7 @@
 # xchenj-API
+
+.env
+- X_CMC_PRO_API_KEY=YourAPIKey
+- API_DOMAIN=https://pro-api.coinmarketcap.com
+- DEV_ORIGIN=CLIENT APP URL IN DEVELOPMENT
+- PROD_ORIGIN=CLIENT APP URL IN PRODUCTION
