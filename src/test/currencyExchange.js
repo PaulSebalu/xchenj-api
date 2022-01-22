@@ -52,8 +52,10 @@ describe("Price conversion endpoint **************", () => {
       .request(app)
       .get(`/listing?currency=cryptos`);
 
-    const base = cryptoListing.body[0];
-    const exchange = fiatListing.body[0];
+    const base =
+      cryptoListing.body[Math.floor(Math.random() * cryptoListing.body.length)];
+    const exchange =
+      fiatListing.body[Math.floor(Math.random() * fiatListing.body.length)];
 
     const {
       body: { quote, id, symbol },
